@@ -1,0 +1,32 @@
+Allan Parsons Projekt - working title repo name
+
+
+
+
+
+Project Description:
+
+Making an app where a user can enter ingredients they have to retrieve recipes that can be made with said ingredients., Favorite the ingredients , mark favorite recipes 
+
+User story:
+I am wanna be home chef and I have ingredients that I have no idea what do with- this app will assist with finding recipe ideas.
+
+wireframe:
+
+
+API’s:
+
+Walmart, other store api’s possible
+#some recipe api’s
+Spoonacular
+https://spoonacular.com/food-api
+
+
+Tasks
+
+HTML
+CSS STYLE- 
+(foundation, materialize,)
+ Query api’s and how to use the data
+How to render data onto page in useful manner
+Utilize local storage for favoring and other stuff.
