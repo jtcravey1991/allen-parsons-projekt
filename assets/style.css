@@ -14,3 +14,13 @@
     padding-top: 20px;
     padding-bottom: 45px;
 }
+
+.greetings {
+    text-align: center;
+    background-color: rgb(207, 108, 99);
+}
+
+.secondary-text {
+    font-size: 30px;
+}
+
