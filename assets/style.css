@@ -1,0 +1,16 @@
+*, h1 {
+    margin: 0;
+    padding: 0;
+}
+
+.content {
+    height: 300px;
+}
+
+.jumbotron {
+    text-align: center;
+    background: rgb(78, 78, 78);
+    color: white;
+    padding-top: 20px;
+    padding-bottom: 45px;
+}
