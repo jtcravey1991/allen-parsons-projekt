@@ -20,6 +20,16 @@ A modern responsive front-end framework based on Material Design
 https://mootools.net
 a compact javascript framework
 
+Mission Statement:
+As people who are alive and like to stay alive- food is necessary to this goal.
+However, some people have allergies or sensativities to some types of food and that is no bueno!
+So we created this app to help people figure out how to cook food, buy food and avoid foods 
+they may be alergic or sensitive to.
+
+
+
 possible api
 https://api2.bigoven.com/
 https://chompthis.com/
+
+
