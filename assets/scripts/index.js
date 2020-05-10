@@ -7,7 +7,7 @@ var currentRecipe = {};
 
 initialize();
 
-// initializes recipe of the day on load
+// initializes recipe of the day by checking if today was the last load, and rendering either a new random recipe or the one saved to local storage
 function initialize() {
     loadLastLoad();
     if (lastLoad === currentDay) {
