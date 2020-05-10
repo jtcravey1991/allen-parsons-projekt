@@ -45,15 +45,11 @@
         <div class="row">
             <!-- ----- Recipe of the Day ----- -->
             <div id="recipeDay" class="col s12 m6">
-            <h2 class="h2-Daily-Recipe">Recipe of the Day!</h2>
-                <section>
-                    <div class="all-col">
-                        <div>
-                            <link rel="stylesheet" href="https://via.placeholder.com/150C/O https://placeholder.com/">
-                        </div>
-                        <h3 class="recipe-col-Title">Recipe of the Day</h3>
-                    </div>
-                </section>
+                <h3>Recipe of the Day!</h3>
+                <div id="rodTitle"></div>
+                <img id="rodImg" src="" alt="recipe of the day image">
+                <div>Ingredients: <span id="rodIngredientSpan"></span></div>
+                <a id="rodLink" href="">Check out the recipe here!</a>
             </div>
 
             <!-- ----- About Us ----- -->
@@ -95,6 +91,10 @@
 
 
     <script src="https://cdnjs.cloudflare.com/ajax/libs/materialize/1.0.0/js/materialize.min.js"></script>
+    <script src="https://code.jquery.com/jquery-3.5.1.js"
+        integrity="sha256-QWo7LDvxbWT2tbbQ97B53yJnYU3WhH/C8ycbRAkjPDc=" crossorigin="anonymous"></script>
+    <script src="https://cdnjs.cloudflare.com/ajax/libs/moment.js/2.24.0/moment.min.js"></script>
+    <script src="assets/scripts/mootools.js"></script>
     <script src="assets/scripts/index.js"></script>
 </body>
 

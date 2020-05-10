@@ -1,3 +1,4 @@
+/* All pages ----------------------------------- */
 *, h1 {
     margin: 0;
     padding: 0;
@@ -24,3 +25,8 @@
     font-size: 30px;
 }
 
+
+/* Home / index.html --------------------------- */
+#rodImg {
+    width: 100%;
+}
