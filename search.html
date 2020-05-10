@@ -31,12 +31,78 @@
     </header>
 
     <!-- Body ------------------------------------------------------------------------------------------------------------------------ -->
-    <div class="content container">
-        <div class="row">
-            
+    <div class="container">
+        <form id="search-site"  action='search' method='get'>
+          <div class="input-group">
+        <div class="input-field">
+        <input id="search" type="search" name='q'>
+        <label class="label-icon" for="search">
+          <i class="material-icons" >search</i>
+         </label>
         </div>
+        <button type="submit" class="input-group-addon btn">search</button>
+        </div>
+        <div>
+        </form>
+          </div>
 
-    </div>
+          <form action="#" class="col s6">
+            <p>
+                <label>
+                  Allergies/Intolerances
+                </label>
+              </p>
+            <p>
+              <label>
+                <input type="checkbox" id="dairyBox" />
+                <span >Dairy</span>
+              </label>
+            </p>
+            <p>
+              <label>
+                <input type="checkbox" checked="checked" id="eggBox" />
+                <span >Eggs</span>
+              </label>
+            </p>
+            <p>
+                <p>
+                    <label>
+                      <input type="checkbox" checked="checked" id="glutenBox" />
+                      <span >Gluten</span>
+                    </label>
+                  </p>
+                  <p>
+                    <label>
+                      <input type="checkbox" checked="checked" id= "PeanutBox"/>
+                      <span >Peanut</span>
+                    </label>
+                  </p>
+                  <p>
+                    <label>
+                      <input type="checkbox" checked="checked" id="treeNutBox"/>
+                      <span >Tree Nut</span>
+                    </label>
+                  </p>
+                  <p>
+                    <label>
+                      <input type="checkbox" checked="checked" id="SeafoodBox"/>
+                      <span>Seafood</span>
+                    </label>
+                  </p>
+                  <p>
+                    <label>
+                      <input type="checkbox" checked="checked" id= "shellfishBox"/>
+                      <span >Shellfish</span>
+                    </label>
+                  </p>
+                  <p>
+                    <label>
+                      <input type="checkbox" checked="checked" id= "soyBox" />
+                      <span >Soy</span>
+                    </label>
+                  </p>
+          </form>
+       
 
 
     <!-- Footer ---------------------------------------------------------------------------------------------------------------------- -->
