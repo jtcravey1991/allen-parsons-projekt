@@ -2,143 +2,152 @@
 <html lang="en">
 
 <head>
-    <meta charset="UTF-8">
-    <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/materialize/1.0.0/css/materialize.min.css">
-    <link rel="stylesheet" href="assets/style.css">
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/materialize/1.0.0/css/materialize.min.css">
+  <link rel="stylesheet" href="assets/style.css">
 
-    <title>Document</title>
+  <title>Document</title>
 </head>
 
 
 <body>
-    <!-- Header ---------------------------------------------------------------------------------------------------------------------- -->
-    <header>
-        <div class="jumbotron">
-            <h1>Insert Name Here</h1>
-            <p>This is a modified jumbotron that occupies the entire horizontal space of its parent.</p>
-        </div>
-        <nav>
-            <div class="nav-wrapper">
-              <a href="#" class="brand-logo right">Logo</a>
-              <ul id="nav-mobile" class="left hide-on-med-and-down">
-                <li><a href="index.html">Home</a></li>
-                <li><a href="recipes.html">Recipes</a></li>
-                <li><a href="search.html">Alergies</a></li>
-              </ul>
-            </div>
-          </nav>
-    </header>
+  <!-- Header ---------------------------------------------------------------------------------------------------------------------- -->
+  <header>
+    <div class="jumbotron">
+      <h1>Insert Name Here</h1>
+      <p>This is a modified jumbotron that occupies the entire horizontal space of its parent.</p>
+    </div>
+    <nav>
+      <div class="nav-wrapper">
+        <a href="#" class="brand-logo right">Logo</a>
+        <ul id="nav-mobile" class="left hide-on-med-and-down">
+          <li><a href="index.html">Home</a></li>
+          <li><a href="recipes.html">Recipes</a></li>
+          <li><a href="search.html">Alergies</a></li>
+        </ul>
+      </div>
+    </nav>
+  </header>
 
-    <!-- Body ------------------------------------------------------------------------------------------------------------------------ -->
-    <div class="container">
-        <form id="search-site"  action='search' method='get'>
-          <div class="input-group">
-        <div class="input-field">
-        <input id="search" type="search" name='q'>
-        <label class="label-icon" for="search">
-          <i class="material-icons" >search</i>
-         </label>
-        </div>
-        <button type="submit" class="input-group-addon btn">search</button>
-             <button type="submit" class="input-group-addon btn">Favorites</button>
+  <!-- Body ------------------------------------------------------------------------------------------------------------------------ -->
+  <div class="container">
+    <div class="row">
 
-        </div>
-        <div>
+      <div class="col s12 m6">
+        <form action="#">
+          <p>
+
+          <h5>Allergies/Intolerances</h5>
+
+          </p>
+          <p>
+            <label>
+              <input type="checkbox" id="dairyBox" />
+              <span>Dairy</span>
+            </label>
+          </p>
+          <p>
+            <label>
+              <input type="checkbox" id="eggBox" />
+              <span>Eggs</span>
+            </label>
+          </p>
+          <p>
+          <p>
+            <label>
+              <input type="checkbox" id="glutenBox" />
+              <span>Gluten</span>
+            </label>
+          </p>
+          <p>
+            <label>
+              <input type="checkbox" id="PeanutBox" />
+              <span>Peanut</span>
+            </label>
+          </p>
+          <p>
+            <label>
+              <input type="checkbox" id="treeNutBox" />
+              <span>Tree Nut</span>
+            </label>
+          </p>
+          <p>
+            <label>
+              <input type="checkbox" id="SeafoodBox" />
+              <span>Seafood</span>
+            </label>
+          </p>
+          <p>
+            <label>
+              <input type="checkbox" id="shellfishBox" />
+              <span>Shellfish</span>
+            </label>
+          </p>
+          <p>
+            <label>
+              <input type="checkbox" id="soyBox" />
+              <span>Soy</span>
+            </label>
+          </p>
         </form>
-          </div>
+      </div>
 
-          <form action="#" class="col s6">
-            <p>
-                
-                 <h5>Allergies/Intolerances</h5> 
-  
-              </p>
-            <p>
-              <label>
-                <input type="checkbox" id="dairyBox" />
-                <span >Dairy</span>
+      <div class="col s12 m6">
+        <form id="addIngredient">
+            <div class="input-field">
+              <input id="addIngredientInput" type="text" placeholder="ingredient">
+              <label class="label-icon" for="search">
               </label>
-            </p>
-            <p>
-              <label>
-                <input type="checkbox"  id="eggBox" />
-                <span >Eggs</span>
-              </label>
-            </p>
-            <p>
-                <p>
-                    <label>
-                      <input type="checkbox"  id="glutenBox" />
-                      <span >Gluten</span>
-                    </label>
-                  </p>
-                  <p>
-                    <label>
-                      <input type="checkbox" id= "PeanutBox"/>
-                      <span >Peanut</span>
-                    </label>
-                  </p>
-                  <p>
-                    <label>
-                      <input type="checkbox"  id="treeNutBox"/>
-                      <span >Tree Nut</span>
-                    </label>
-                  </p>
-                  <p>
-                    <label>
-                      <input type="checkbox"  id="SeafoodBox"/>
-                      <span>Seafood</span>
-                    </label>
-                  </p>
-                  <p>
-                    <label>
-                      <input type="checkbox"  id= "shellfishBox"/>
-                      <span >Shellfish</span>
-                    </label>
-                  </p>
-                  <p>
-                    <label>
-                      <input type="checkbox" id= "soyBox" />
-                      <span >Soy</span>
-                    </label>
-                  </p>
-          </form>
+            </div>
+            <button id="addButton" type="submit" class="btn">Add Ingredient</button>
+        </form>
+      </div>
+
+      <div id="currentIngredients">
+        <h5>Added Ingredients:</h5>
+        <ul id="currentIngredientsList"></ul>
+      </div>
+    </div>
+  </div>
+
+  <!-- Footer ---------------------------------------------------------------------------------------------------------------------- -->
+  <footer class="page-footer">
+    <div class="container">
+      <div class="row">
+        <div class="col l6 s12">
+          <h5 class="white-text">Footer Content</h5>
+          <p class="grey-text text-lighten-4">You can use rows and columns here to organize your footer
+            content.
+          </p>
         </div>
-        </body>
-
-    <!-- Footer ---------------------------------------------------------------------------------------------------------------------- -->
-    <footer class="page-footer">
+        <div class="col l4 offset-l2 s12">
+          <h5 class="white-text">Links</h5>
+          <ul>
+            <li><a class="grey-text text-lighten-3" href="#!">Home</a></li>
+            <li><a class="grey-text text-lighten-3" href="#!">Recipes</a></li>
+            <li><a class="grey-text text-lighten-3" href="#!">Ingredients</a></li>
+          </ul>
+        </div>
+      </div>
+    </div>
+    <div class="footer-copyright">
       <div class="container">
-          <div class="row">
-              <div class="col l6 s12">
-                  <h5 class="white-text">Footer Content</h5>
-                  <p class="grey-text text-lighten-4">You can use rows and columns here to organize your footer
-                      content.
-                  </p>
-              </div>
-              <div class="col l4 offset-l2 s12">
-                  <h5 class="white-text">Links</h5>
-                  <ul>
-                      <li><a class="grey-text text-lighten-3" href="#!">Home</a></li>
-                      <li><a class="grey-text text-lighten-3" href="#!">Recipes</a></li>
-                      <li><a class="grey-text text-lighten-3" href="#!">Ingredients</a></li>
-                  </ul>
-              </div>
-          </div>
+        © 2020 Copyright Text
+        <a class="grey-text text-lighten-4 right" href="#!">More Links</a>
       </div>
-      <div class="footer-copyright">
-          <div class="container">
-              © 2020 Copyright Text
-              <a class="grey-text text-lighten-4 right" href="#!">More Links</a>
-          </div>
-      </div>
+    </div>
   </footer>
+</body>
 
 
 
-    <script src="https://cdnjs.cloudflare.com/ajax/libs/materialize/1.0.0/js/materialize.min.js"></script>
-    <script src="assets/scripts/search.js"></script>
+
+<script src="https://cdnjs.cloudflare.com/ajax/libs/materialize/1.0.0/js/materialize.min.js"></script>
+<script src="https://code.jquery.com/jquery-3.5.1.js"
+        integrity="sha256-QWo7LDvxbWT2tbbQ97B53yJnYU3WhH/C8ycbRAkjPDc=" crossorigin="anonymous"></script>
+<script src="assets/scripts/mootools.js"></script>
+<script src="assets/scripts/search.js"></script>
 </body>
 
 
