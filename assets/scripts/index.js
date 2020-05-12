@@ -4,6 +4,7 @@ var currentROD = "";
 var lastLoad = "";
 var currentDay = moment().format("MMDDYY");
 var currentRecipe = {};
+var localStorage
 
 initialize();
 

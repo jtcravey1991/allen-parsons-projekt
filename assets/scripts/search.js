@@ -177,3 +177,5 @@ function generateURL() {
     searchURL += "&number=10"
     
 }
+
+localStorage.setItem("switch", "inner-switch")

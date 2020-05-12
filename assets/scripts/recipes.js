@@ -1,3 +1,5 @@
+var localStorage
+
 //Dark Mode
 jQuery(".inner-switch").on("click", function () {
     if (jQuery("body").hasClass("dark")) {
@@ -8,3 +10,5 @@ jQuery(".inner-switch").on("click", function () {
         jQuery(".inner-switch").text("ON");
     }
 });
+
+localStorage.setItem("switch", "inner-switch")
