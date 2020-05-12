@@ -18,7 +18,8 @@
 
 .greetings {
     text-align: center;
-    background-color: rgb(207, 108, 99);
+    background-color: rgb(78, 78, 78);
+    color: white;
 }
 
 .secondary-text {
