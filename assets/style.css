@@ -1,5 +1,6 @@
 /* All pages ----------------------------------- */
-*, h1 {
+* {
+    box-sizing: border-box;
     margin: 0;
     padding: 0;
 }

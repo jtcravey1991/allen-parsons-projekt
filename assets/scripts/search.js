@@ -49,6 +49,7 @@ allergyChecks.addEventListener("click", function (event) {
     if (event.target.type === "checkbox") {
         updateAllergies();
         saveAllergies();
+        generateURL();
     }
 });
 
@@ -67,7 +68,7 @@ function checkIngredient(term) {
             wrongIngredient();
         }
         else {
-            ingredientList.push(document.id("addIngredientInput").value);
+            ingredientList.push(checkedIngredient);
             document.id("addIngredientInput").value = "";
             saveIngredientList();
             renderIngredients();
@@ -167,3 +168,12 @@ jQuery(".inner-switch").on("click", function () {
         jQuery(".inner-switch").text("ON");
     }
 });
+function generateURL() {
+    var searchURL = "https://api.spoonacular.com/recipes/findByIngredients?apiKey=4483dfcaf2b64ab798b9683fabb17a1a&ingredients="
+    for (var i = 0; i < ingredientList.length; i++) {
+        searchURL += (ingredientList[i] + ",+")
+    }
+    searchURL = searchURL.slice(0, -2);
+    searchURL += "&number=10"
+    
+}
