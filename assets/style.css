@@ -1,5 +1,6 @@
 /* All pages ----------------------------------- */
-*, h1 {
+* {
+    box-sizing: border-box;
     margin: 0;
     padding: 0;
 }
@@ -29,4 +30,47 @@
 /* Home / index.html --------------------------- */
 #rodImg {
     width: 100%;
+}
+
+#orFlex p {
+    text-align: center;
+    margin: 30px 0 10px 0;
+}
+
+.rowFlex {
+    display: flex;
+    align-items: center;
+    flex-wrap: wrap;
+}
+
+.recipe {
+    height: max-content;
+    border-style: solid;
+    border-width: 1px;
+    border-color: black;
+    border-radius: 9px;
+}
+
+.recipeTitle img {
+    max-height: 100px;
+    max-width: 150px;
+    height: auto;
+    width: auto;
+    margin: 0;
+    padding: 0 0 0 0;
+}
+
+.recipeTitle {
+    display: flex;
+    align-items: center;
+    justify-content: left;
+}
+
+.recipeTitle h5 {
+    margin: 0 20px;
+}
+
+.flexTitle {
+    /* display: flex;
+    justify-content: center; */
 }
