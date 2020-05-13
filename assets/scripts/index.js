@@ -4,7 +4,24 @@ var currentROD = "";
 var lastLoad = "";
 var currentDay = moment().format("MMDDYY");
 var currentRecipe = {};
-var localStorage
+
+if (localStorage.getItem("switch") == "light" ){
+    if (jQuery("body").hasClass("dark")) {
+        jQuery("body").removeClass("dark");
+        jQuery(".inner-switch").text("OFF");
+    }
+}
+else if (localStorage.getItem("switch") == "dark"){
+    jQuery("body").addClass("dark");
+    jQuery(".inner-switch").text("ON");
+}
+
+else {
+    if (jQuery("body").hasClass("dark")) {
+        jQuery("body").removeClass("dark");
+        jQuery(".inner-switch").text("OFF");
+    }
+}
 
 initialize();
 
@@ -133,13 +150,16 @@ jQuery(".inner-switch").on("click", function () {
     if (jQuery("body").hasClass("dark")) {
         jQuery("body").removeClass("dark");
         jQuery(".inner-switch").text("OFF");
+        localStorage.setItem("switch", "light")
+
     } else {
         jQuery("body").addClass("dark");
         jQuery(".inner-switch").text("ON");
+        localStorage.setItem("switch", "dark")
+
     }
 });
 
-localStorage.setItem("switch", "inner-switch")
 
 /*
 var setTheme = function (theme) {

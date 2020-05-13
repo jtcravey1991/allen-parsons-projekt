@@ -11,6 +11,24 @@ var allergies = {
     shellfish: false,
     soy: false
 };
+//Dark Mode
+if (localStorage.getItem("switch") == "light" ){
+    if (jQuery("body").hasClass("dark")) {
+        jQuery("body").removeClass("dark");
+        jQuery(".inner-switch").text("OFF");
+    }
+}
+else if (localStorage.getItem("switch") == "dark"){
+    jQuery("body").addClass("dark");
+    jQuery(".inner-switch").text("ON");
+}
+
+else {
+    if (jQuery("body").hasClass("dark")) {
+        jQuery("body").removeClass("dark");
+        jQuery(".inner-switch").text("OFF");
+    }
+}
 
 var ingredientElement = document.getElementById("currentIngredientsList");
 var allergyChecks = document.getElementById("allergiesForm");
@@ -178,4 +196,3 @@ function generateURL() {
     
 }
 
-localStorage.setItem("switch", "inner-switch")
