@@ -120,6 +120,13 @@
 
         </form>
 
+
+        <div id="currentIngredients">
+          <h5>Added Ingredients:</h5>
+          <ul id="currentIngredientsList"></ul>
+        </div>
+        <button id="ingredientSearchButton" type="submit" class="btn">Search Recipes</button>
+
         <div id="currentIngredients">
           <h5>Added Ingredients:</h5>
           <ul id="currentIngredientsList"></ul>
@@ -153,7 +160,26 @@
         <p>Lorem ipsum dolor sit amet, consectetur adipisicing elit. Consequatur porro nulla illo dolor dolorem
           temporibus</p>
       </div>
+
+
     </div>
+
+
+    <div>
+      <h5>Recipe Results:</h5>
+    </div>
+    <div id="searchResults">
+
+      <div class="row recipe">
+        <img class="col s12 m4 l3" src="https://via.placeholder.com/150" alt="placeholder">
+        <div class="col s12 m6">
+          <a href="#">
+            <h5>Recipe Title</h5>
+          </a>
+          <button type="button">Save</button>
+          <p>Ready In: </p>
+          <p>Serves: </p>
+
   </div>
   </div>
 
@@ -167,23 +193,49 @@
             content.
           </p>
         </div>
-        <div class="col l4 offset-l2 s12">
-          <h5 class="white-text">Links</h5>
-          <ul>
-            <li><a class="grey-text text-lighten-3" href="#!">Home</a></li>
-            <li><a class="grey-text text-lighten-3" href="#!">Recipes</a></li>
-            <li><a class="grey-text text-lighten-3" href="#!">Ingredients</a></li>
-          </ul>
+      </div>
+
+      <div class="row recipe">
+        <img class="col s12 m4 l3" src="https://via.placeholder.com/150" alt="placeholder">
+        <div class="col s12 m6">
+          <a href="#">
+            <h5>Recipe Title</h5>
+          </a>
+          <button type="button">Save</button>
+          <p>Ready In: </p>
+          <p>Serves: </p>
         </div>
       </div>
+
     </div>
-    <div class="footer-copyright">
+
+    <!-- Footer ---------------------------------------------------------------------------------------------------------------------- -->
+    <footer class="page-footer">
       <div class="container">
-        © 2020 Copyright Text
-        <a class="grey-text text-lighten-4 right" href="#!">More Links</a>
+        <div class="row">
+          <div class="col l6 s12">
+            <h5 class="white-text">Footer Content</h5>
+            <p class="grey-text text-lighten-4">You can use rows and columns here to organize your footer
+              content.
+            </p>
+          </div>
+          <div class="col l4 offset-l2 s12">
+            <h5 class="white-text">Links</h5>
+            <ul>
+              <li><a class="grey-text text-lighten-3" href="#!">Home</a></li>
+              <li><a class="grey-text text-lighten-3" href="#!">Recipes</a></li>
+              <li><a class="grey-text text-lighten-3" href="#!">Ingredients</a></li>
+            </ul>
+          </div>
+        </div>
       </div>
-    </div>
-  </footer>
+      <div class="footer-copyright">
+        <div class="container">
+          © 2020 Copyright Text
+          <a class="grey-text text-lighten-4 right" href="#!">More Links</a>
+        </div>
+      </div>
+    </footer>
 </body>
 
 
@@ -195,6 +247,5 @@
 <script src="assets/scripts/mootools.js"></script>
 <script src="assets/scripts/search.js"></script>
 </body>
-
 
 </html>

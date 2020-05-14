@@ -34,6 +34,57 @@
     width: 100%;
 }
 
+#orFlex p {
+    text-align: center;
+    margin: 30px 0 10px 0;
+}
+
+.rowFlex {
+    display: flex;
+    align-items: center;
+    flex-wrap: wrap;
+}
+
+.recipe {
+    height: max-content;
+    margin: 15px 0 30px 0;
+    align-items: center;
+}
+
+.recipeImg {
+    height: 150px;
+    width: 150px;
+    height: auto;
+    width: auto;
+    margin-left: 0;
+    padding: 0 0 0 0;
+}
+
+.recipeTitle {
+    display: flex;
+    align-items: center;
+    justify-content: left;
+}
+
+.recipeTitle h5 {
+    margin: 0 20px;
+}
+
+.flexTitle {
+    display: flex;
+    justify-content: left;
+    align-items: center;
+}
+
+.flexTitle button {
+    max-width: 50%;
+    margin: 0 auto;
+    padding: 2px 15px;
+}
+
+.row {
+    margin-bottom: 0;
+
 .greetings {
     text-align: center;
     background-color: rgb(207, 108, 99);
