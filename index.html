@@ -12,11 +12,13 @@
 
 
 <body>
+
     <!-- Header ---------------------------------------------------------------------------------------------------------------------- -->
     <header>
         <div class="jumbotron">
             <h1>Insert Name Here</h1>
             <p>This is a modified jumbotron that occupies the entire horizontal space of its parent.</p>
+            <div class="switch right">Dark mode:<span class="inner-switch">OFF</span></div>
         </div>
         <nav>
             <div class="nav-wrapper">
@@ -26,6 +28,7 @@
                     <li><a href="recipes.html">Recipes</a></li>
                     <li><a href="search.html">Alergies</a></li>
                 </ul>
+
             </div>
         </nav>
     </header>
@@ -41,7 +44,7 @@
                     This is a site that promotes DIY cooking!</p>
             </h1>
         </div>
-        <div class="row">
+        <div class="row" id="row-1">
             <!-- ----- Recipe of the Day ----- -->
             <div id="recipeDay" class="col s12 m6">
                 <h3>Recipe of the Day!</h3>
@@ -54,14 +57,19 @@
             <!-- ----- About Us ----- -->
             <div id="aboutUs" class="col s12 m6">
                 <h3>About "Working Title"</h3>
-                <p>Lorem ipsum dolor sit, amet consectetur adipisicing elit. Veritatis ad quaerat modi temporibus
-                    accusamus, ipsam assumenda, officiis pariatur sequi ipsa reiciendis nostrum quo natus? Possimus
-                    eaque nam doloremque reprehenderit dolor!</p>
+                <p>This app will allow the user to find recipies to make with ingredients on hand as well as identifying
+                    ingredients that need to be otained to make recipie. The app will allow the user to identify food
+                    allergies (#peanut)/intollerences (#lactose) Users will use a check boxes to indentify allergies and
+                    intollerences</p>
                 <p>Lorem ipsum dolor sit, amet consectetur adipisicing elit. Veritatis ad quaerat modi temporibus
                     accusamus, ipsam assumenda, officiis pariatur sequi ipsa reiciendis nostrum quo natus? Possimus
                     eaque nam doloremque reprehenderit dolor!</p>
             </div>
         </div>
+    </div>
+    <div class="row" id="row-2">
+        <script src="GET https://api.spoonacular.com/food/jokes/random"></script>
+
     </div>
 
 
@@ -78,9 +86,9 @@
                 <div class="col l4 offset-l2 s12">
                     <h5 class="white-text">Links</h5>
                     <ul>
-                        <li><a class="grey-text text-lighten-3" href="#!">Home</a></li>
-                        <li><a class="grey-text text-lighten-3" href="#!">Recipes</a></li>
-                        <li><a class="grey-text text-lighten-3" href="#!">Ingredients</a></li>
+                        <li><a class="grey-text text-lighten-3" href="index.html">Home</a></li>
+                        <li><a class="grey-text text-lighten-3" href="recipes.html">Recipes</a></li>
+                        <li><a class="grey-text text-lighten-3" href="search.html">Ingredients</a></li>
                     </ul>
                 </div>
             </div>

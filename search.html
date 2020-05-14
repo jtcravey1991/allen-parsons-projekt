@@ -15,20 +15,22 @@
   <!-- Header ---------------------------------------------------------------------------------------------------------------------- -->
   <header>
     <div class="jumbotron">
-      <h1>Insert Name Here</h1>
-      <p>This is a modified jumbotron that occupies the entire horizontal space of its parent.</p>
+        <h1>Insert Name Here</h1>
+        <p>This is a modified jumbotron that occupies the entire horizontal space of its parent.</p>
+        <div class="switch right">Dark mode:<span class="inner-switch">OFF</span></div>
     </div>
     <nav>
-      <div class="nav-wrapper">
-        <a href="#" class="brand-logo right">Logo</a>
-        <ul id="nav-mobile" class="left hide-on-med-and-down">
-          <li><a href="index.html">Home</a></li>
-          <li><a href="recipes.html">Recipes</a></li>
-          <li><a href="search.html">Alergies</a></li>
-        </ul>
-      </div>
+        <div class="nav-wrapper">
+            <a href="#" class="brand-logo right">Logo</a>
+            <ul id="nav-mobile" class="left hide-on-med-and-down">
+                <li><a href="index.html">Home</a></li>
+                <li><a href="recipes.html">Recipes</a></li>
+                <li><a href="search.html">Alergies</a></li>
+            </ul>
+
+        </div>
     </nav>
-  </header>
+</header>
 
   <!-- Body ------------------------------------------------------------------------------------------------------------------------ -->
   <div class="container">
@@ -118,15 +120,50 @@
 
         </form>
 
+
         <div id="currentIngredients">
           <h5>Added Ingredients:</h5>
           <ul id="currentIngredientsList"></ul>
         </div>
         <button id="ingredientSearchButton" type="submit" class="btn">Search Recipes</button>
+
+        <div id="currentIngredients">
+          <h5>Added Ingredients:</h5>
+          <ul id="currentIngredientsList"></ul>
+        </div>
+        <button id="recipeSearchButton" type="submit" class="btn">Search Recipes</button>
       </div>
 
 
     </div>
+
+    <div>
+      <h5>Recipe Results:</h5>
+    </div>
+
+
+    <div class="row rowFlex recipe">
+      <div class="col s12 m12 l4 recipeTitle">
+        <img src="https://via.placeholder.com/150" alt="placeholder">
+        <div class="flexTitle">
+          <h5>Recipe Title</h5>
+          <button type="button">Save</button>
+        </div>
+      </div>
+      <div class="col s12 m6 l4">
+        <h6>Owned Ingredients</h6>
+        <p>Lorem ipsum dolor sit amet, consectetur adipisicing elit. Consequatur porro nulla illo dolor dolorem
+          temporibus</p>
+      </div>
+      <div class="col s12 m6 l4">
+        <h6>Need to Purchase Ingredients</h6>
+        <p>Lorem ipsum dolor sit amet, consectetur adipisicing elit. Consequatur porro nulla illo dolor dolorem
+          temporibus</p>
+      </div>
+
+
+    </div>
+
 
     <div>
       <h5>Recipe Results:</h5>
@@ -142,6 +179,19 @@
           <button type="button">Save</button>
           <p>Ready In: </p>
           <p>Serves: </p>
+
+  </div>
+  </div>
+
+  <!-- Footer ---------------------------------------------------------------------------------------------------------------------- -->
+  <footer class="page-footer">
+    <div class="container">
+      <div class="row">
+        <div class="col l6 s12">
+          <h5 class="white-text">Footer Content</h5>
+          <p class="grey-text text-lighten-4">You can use rows and columns here to organize your footer
+            content.
+          </p>
         </div>
       </div>
 
