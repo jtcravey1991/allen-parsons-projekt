@@ -12,41 +12,13 @@ var allergies = {
     soy: false
 };
 var savedRecipes = [];
+
 var currentResults = {};
+
 var mode;
+
 var ingredientElement = document.getElementById("currentIngredientsList");
 var allergyChecks = document.getElementById("allergiesForm");
-
-//Dark Mode
-if (localStorage.getItem("switch") == "light") {
-    if (jQuery("body").hasClass("dark")) {
-        jQuery("body").removeClass("dark");
-        jQuery(".inner-switch").text("OFF");
-    }
-}
-else if (localStorage.getItem("switch") == "dark") {
-    jQuery("body").addClass("dark");
-    jQuery(".inner-switch").text("ON");
-}
-
-else {
-    if (jQuery("body").hasClass("dark")) {
-        jQuery("body").removeClass("dark");
-        jQuery(".inner-switch").text("OFF");
-    }
-}
-
-//Dark Mode
-jQuery(".inner-switch").on("click", function () {
-    if (jQuery("body").hasClass("dark")) {
-        jQuery("body").removeClass("dark");
-        jQuery(".inner-switch").text("OFF");
-    } else {
-        jQuery("body").addClass("dark");
-        jQuery(".inner-switch").text("ON");
-    }
-});
-
 
 initialize();
 
@@ -82,7 +54,6 @@ allergyChecks.addEventListener("click", function (event) {
     if (event.target.type === "checkbox") {
         updateAllergies();
         saveAllergies();
-        generateURL();
     }
 });
 
