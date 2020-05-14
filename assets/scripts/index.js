@@ -145,23 +145,6 @@ function renderRecipe() {
     }
 }
 
-<<<<<<< HEAD
-
-
-function loadJoke(){
-    j$.ajax({
-        url:'https://api.spoonacular.com/food/jokes/random?apiKey=4483dfcaf2b64ab798b9683fabb17a1a',
-        method: "GET",
-      }).then(function (joke) {
-        console.log(jock);
-
-})};
-loadJoke()
-
-function randomJoke(joke){
-
-};
-=======
 //Dark Mode
 jQuery(".inner-switch").on("click", function () {
     if (jQuery("body").hasClass("dark")) {
@@ -219,4 +202,3 @@ function setCookie(name, value, days) {
 
 function deleteCookie(name) { setCookie(name, '', -1); }
 */
->>>>>>> dd106d6ce056c2f0f4505a2bfddd37164b64906c
