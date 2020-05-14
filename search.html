@@ -15,22 +15,20 @@
   <!-- Header ---------------------------------------------------------------------------------------------------------------------- -->
   <header>
     <div class="jumbotron">
-        <h1>Insert Name Here</h1>
-        <p>This is a modified jumbotron that occupies the entire horizontal space of its parent.</p>
-        <div class="switch right">Dark mode:<span class="inner-switch">OFF</span></div>
+      <h1>Insert Name Here</h1>
+      <p>This is a modified jumbotron that occupies the entire horizontal space of its parent.</p>
     </div>
     <nav>
-        <div class="nav-wrapper">
-            <a href="#" class="brand-logo right">Logo</a>
-            <ul id="nav-mobile">
-                <li><a href="index.html">Home</a></li>
-                <li><a href="recipes.html">Recipes</a></li>
-                <li><a href="search.html">Alergies</a></li>
-            </ul>
-
-        </div>
+      <div class="nav-wrapper">
+        <a href="#" class="brand-logo right">Logo</a>
+        <ul id="nav-mobile" class="left hide-on-med-and-down">
+          <li><a href="index.html">Home</a></li>
+          <li><a href="recipes.html">Recipes</a></li>
+          <li><a href="search.html">Alergies</a></li>
+        </ul>
+      </div>
     </nav>
-</header>
+  </header>
 
   <!-- Body ------------------------------------------------------------------------------------------------------------------------ -->
   <div class="container">
@@ -120,12 +118,12 @@
 
         </form>
 
-
         <div id="currentIngredients">
           <h5>Added Ingredients:</h5>
           <ul id="currentIngredientsList"></ul>
         </div>
         <button id="ingredientSearchButton" type="submit" class="btn">Search Recipes</button>
+      </div>
 
 
     </div>
@@ -133,7 +131,6 @@
     <div>
       <h5>Recipe Results:</h5>
     </div>
-    
     <div id="searchResults">
 
       <div class="row recipe">
@@ -145,9 +142,22 @@
           <button type="button">Save</button>
           <p>Ready In: </p>
           <p>Serves: </p>
+        </div>
+      </div>
 
-  </div>
-  </div>
+      <div class="row recipe">
+        <img class="col s12 m4 l3" src="https://via.placeholder.com/150" alt="placeholder">
+        <div class="col s12 m6">
+          <a href="#">
+            <h5>Recipe Title</h5>
+          </a>
+          <button type="button">Save</button>
+          <p>Ready In: </p>
+          <p>Serves: </p>
+        </div>
+      </div>
+
+    </div>
 
     <!-- Footer ---------------------------------------------------------------------------------------------------------------------- -->
     <footer class="page-footer">
