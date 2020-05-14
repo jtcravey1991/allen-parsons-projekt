@@ -12,39 +12,29 @@
 
 
 <body>
+
     <!-- Header ---------------------------------------------------------------------------------------------------------------------- -->
     <header>
         <div class="jumbotron">
             <h1>Insert Name Here</h1>
             <p>This is a modified jumbotron that occupies the entire horizontal space of its parent.</p>
+            <div class="switch right">Dark mode:<span class="inner-switch">OFF</span></div>
         </div>
         <nav>
             <div class="nav-wrapper">
                 <a href="#" class="brand-logo right">Logo</a>
                 <ul id="nav-mobile" class="left hide-on-med-and-down">
-                    <li><a href="sass.html">Sass</a></li>
-                    <li><a href="badges.html">Components</a></li>
-                    <li><a href="collapsible.html">JavaScript</a></li>
+                    <li><a href="index.html">Home</a></li>
+                    <li><a href="recipes.html">Recipes</a></li>
+                    <li><a href="search.html">Alergies</a></li>
                 </ul>
+
             </div>
         </nav>
     </header>
 
     <!-- Body ------------------------------------------------------------------------------------------------------------------------ -->
-    <div class="home-page">
-        <div class="container">
-            <nav>
-                <div class="nav-wrapper">
-                    <form>
-                        <div class="input-field">
-                            <input id="search" type="search" required>
-                            <label class="label-icon" for="search"><i class="material-icons">search</i></label>
-                            <i class="material-icons">close</i>
-                        </div>
-                    </form>
-                </div>
-            </nav>
-        </div>
+    <div class="container">
         <div class="title">
             <h1 class="greetings">
                 <span class="home-page_title text">
@@ -53,20 +43,32 @@
                 <p class="secondary-text"> People who are alive and like to stay alive- food is necessary for this goal.
                     This is a site that promotes DIY cooking!</p>
             </h1>
+        </div>
+        <div class="row" id="row-1">
+            <!-- ----- Recipe of the Day ----- -->
+            <div id="recipeDay" class="col s12 m6">
+                <h3>Recipe of the Day!</h3>
+                <div id="rodTitle"></div>
+                <img id="rodImg" src="" alt="recipe of the day image">
+                <div>Ingredients: <span id="rodIngredientSpan"></span></div>
+                <a id="rodLink" href="">Check out the recipe here!</a>
+            </div>
 
+            <!-- ----- About Us ----- -->
+            <div id="aboutUs" class="col s12 m6">
+                <h3>About "Working Title"</h3>
+                <p>This app will allow the user to find recipies to make with ingredients on hand as well as identifying
+                    ingredients that need to be otained to make recipie. The app will allow the user to identify food
+                    allergies (#peanut)/intollerences (#lactose) Users will use a check boxes to indentify allergies and
+                    intollerences</p>
+                <p>Lorem ipsum dolor sit, amet consectetur adipisicing elit. Veritatis ad quaerat modi temporibus
+                    accusamus, ipsam assumenda, officiis pariatur sequi ipsa reiciendis nostrum quo natus? Possimus
+                    eaque nam doloremque reprehenderit dolor!</p>
+            </div>
         </div>
-        <h2 class="h2-Daily-Recipe">Recipe of the Day!</h2>
-        <div class="container">
-            <section>
-                <div class="all-col">
-                    <div>
-                        <link rel="stylesheet" href="https://via.placeholder.com/150C/O https://placeholder.com/">
-                    </div>
-                    <h3 class="recipe-col-Title">Recipe of the Day</h3>
-                    <!-- <!// Need to add the API -->
-                </div>
-            </section>
-        </div>
+    </div>
+    <div class="row" id="row-2">
+        <script src="GET https://api.spoonacular.com/food/jokes/random"></script>
 
     </div>
 
@@ -102,7 +104,11 @@
 
 
     <script src="https://cdnjs.cloudflare.com/ajax/libs/materialize/1.0.0/js/materialize.min.js"></script>
-    <script src="assets/script.js"></script>
+    <script src="https://code.jquery.com/jquery-3.5.1.js"
+        integrity="sha256-QWo7LDvxbWT2tbbQ97B53yJnYU3WhH/C8ycbRAkjPDc=" crossorigin="anonymous"></script>
+    <script src="https://cdnjs.cloudflare.com/ajax/libs/moment.js/2.24.0/moment.min.js"></script>
+    <script src="assets/scripts/mootools.js"></script>
+    <script src="assets/scripts/index.js"></script>
 </body>
 
 </html>

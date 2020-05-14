@@ -2,75 +2,199 @@
 <html lang="en">
 
 <head>
-    <meta charset="UTF-8">
-    <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/materialize/1.0.0/css/materialize.min.css">
-    <link rel="stylesheet" href="assets/style.css">
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/materialize/1.0.0/css/materialize.min.css">
+  <link rel="stylesheet" href="assets/style.css">
 
-    <title>Document</title>
+  <title>Document</title>
 </head>
 
 
 <body>
-    <!-- Header ---------------------------------------------------------------------------------------------------------------------- -->
-    <header>
-        <div class="jumbotron">
-            <h1>Insert Name Here</h1>
-            <p>This is a modified jumbotron that occupies the entire horizontal space of its parent.</p>
-        </div>
-        <nav>
-            <div class="nav-wrapper">
-              <a href="#" class="brand-logo right">Logo</a>
-              <ul id="nav-mobile" class="left hide-on-med-and-down">
-                <li><a href="sass.html">Sass</a></li>
-                <li><a href="badges.html">Components</a></li>
-                <li><a href="collapsible.html">JavaScript</a></li>
-              </ul>
-            </div>
-          </nav>
-    </header>
+  <!-- Header ---------------------------------------------------------------------------------------------------------------------- -->
+  <header>
+    <div class="jumbotron">
+        <h1>Insert Name Here</h1>
+        <p>This is a modified jumbotron that occupies the entire horizontal space of its parent.</p>
+        <div class="switch right">Dark mode:<span class="inner-switch">OFF</span></div>
+    </div>
+    <nav>
+        <div class="nav-wrapper">
+            <a href="#" class="brand-logo right">Logo</a>
+            <ul id="nav-mobile" class="left hide-on-med-and-down">
+                <li><a href="index.html">Home</a></li>
+                <li><a href="recipes.html">Recipes</a></li>
+                <li><a href="search.html">Alergies</a></li>
+            </ul>
 
-    <!-- Body ------------------------------------------------------------------------------------------------------------------------ -->
-    <div class="content container">
-        <div class="row">
-            
         </div>
+    </nav>
+</header>
+
+  <!-- Body ------------------------------------------------------------------------------------------------------------------------ -->
+  <div class="container">
+    <div class="row rowFlex">
+
+      <div class="col s12 m5">
+        <form id="allergiesForm" action="#">
+          <p>
+
+          <h5>Allergies/Intolerances</h5>
+
+          </p>
+          <div class="row">
+            <div class="col s6">
+              <p>
+                <label>
+                  <input type="checkbox" id="dairyBox" />
+                  <span>Dairy</span>
+                </label>
+              </p>
+              <p>
+                <label>
+                  <input type="checkbox" id="eggBox" />
+                  <span>Eggs</span>
+                </label>
+              </p>
+              <p>
+              <p>
+                <label>
+                  <input type="checkbox" id="glutenBox" />
+                  <span>Gluten</span>
+                </label>
+              </p>
+              <p>
+                <label>
+                  <input type="checkbox" id="peanutBox" />
+                  <span>Peanut</span>
+                </label>
+              </p>
+            </div>
+            <div class="col s6">
+              <p>
+                <label>
+                  <input type="checkbox" id="treeNutBox" />
+                  <span>Tree Nut</span>
+                </label>
+              </p>
+              <p>
+                <label>
+                  <input type="checkbox" id="seafoodBox" />
+                  <span>Seafood</span>
+                </label>
+              </p>
+              <p>
+                <label>
+                  <input type="checkbox" id="shellfishBox" />
+                  <span>Shellfish</span>
+                </label>
+              </p>
+              <p>
+                <label>
+                  <input type="checkbox" id="soyBox" />
+                  <span>Soy</span>
+                </label>
+              </p>
+            </div>
+          </div>
+          <form id="searchRecipe">
+            <div class="input-field">
+              <input id="recipeSearchInput" type="text" placeholder="Recipe">
+            </div>
+            <button id="recipeSearchButton" type="submit" class="btn">Search Recipes</button>
+          </form>
+        </form>
+      </div>
+
+      <div id="orFlex" class="col s12 m2">
+        <p>-- or --</p>
+      </div>
+
+      <div class="col s12 m5">
+        <form id="addIngredient">
+          <div class="input-field">
+            <input id="addIngredientInput" type="text" placeholder="Ingredient">
+          </div>
+          <button id="addButton" type="submit" class="btn">Add Ingredient</button>
+
+        </form>
+
+        <div id="currentIngredients">
+          <h5>Added Ingredients:</h5>
+          <ul id="currentIngredientsList"></ul>
+        </div>
+        <button id="recipeSearchButton" type="submit" class="btn">Search Recipes</button>
+      </div>
+
 
     </div>
 
+    <div>
+      <h5>Recipe Results:</h5>
+    </div>
 
-    <!-- Footer ---------------------------------------------------------------------------------------------------------------------- -->
-    <footer class="page-footer">
-        <div class="container">
-            <div class="row">
-                <div class="col l6 s12">
-                    <h5 class="white-text">Footer Content</h5>
-                    <p class="grey-text text-lighten-4">You can use rows and columns here to organize your footer
-                        content.
-                    </p>
-                </div>
-                <div class="col l4 offset-l2 s12">
-                    <h5 class="white-text">Links</h5>
-                    <ul>
-                      <li><a class="grey-text text-lighten-3" href="index.html">Home</a></li>
-                      <li><a class="grey-text text-lighten-3" href="recipes.html">Recipes</a></li>
-                      <li><a class="grey-text text-lighten-3" href="search.html">Ingredients</a></li>
-                    </ul>
-                </div>
-            </div>
+
+    <div class="row rowFlex recipe">
+      <div class="col s12 m12 l4 recipeTitle">
+        <img src="https://via.placeholder.com/150" alt="placeholder">
+        <div class="flexTitle">
+          <h5>Recipe Title</h5>
+          <button type="button">Save</button>
         </div>
-        <div class="footer-copyright">
-            <div class="container">
-                © 2020 Copyright Text
-                <a class="grey-text text-lighten-4 right" href="#!">More Links</a>
-            </div>
+      </div>
+      <div class="col s12 m6 l4">
+        <h6>Owned Ingredients</h6>
+        <p>Lorem ipsum dolor sit amet, consectetur adipisicing elit. Consequatur porro nulla illo dolor dolorem
+          temporibus</p>
+      </div>
+      <div class="col s12 m6 l4">
+        <h6>Need to Purchase Ingredients</h6>
+        <p>Lorem ipsum dolor sit amet, consectetur adipisicing elit. Consequatur porro nulla illo dolor dolorem
+          temporibus</p>
+      </div>
+    </div>
+  </div>
+  </div>
+
+  <!-- Footer ---------------------------------------------------------------------------------------------------------------------- -->
+  <footer class="page-footer">
+    <div class="container">
+      <div class="row">
+        <div class="col l6 s12">
+          <h5 class="white-text">Footer Content</h5>
+          <p class="grey-text text-lighten-4">You can use rows and columns here to organize your footer
+            content.
+          </p>
         </div>
-    </footer>
-
-
-
-    <script src="https://cdnjs.cloudflare.com/ajax/libs/materialize/1.0.0/js/materialize.min.js"></script>
-    <script src="assets/script.js"></script>
+        <div class="col l4 offset-l2 s12">
+          <h5 class="white-text">Links</h5>
+          <ul>
+            <li><a class="grey-text text-lighten-3" href="#!">Home</a></li>
+            <li><a class="grey-text text-lighten-3" href="#!">Recipes</a></li>
+            <li><a class="grey-text text-lighten-3" href="#!">Ingredients</a></li>
+          </ul>
+        </div>
+      </div>
+    </div>
+    <div class="footer-copyright">
+      <div class="container">
+        © 2020 Copyright Text
+        <a class="grey-text text-lighten-4 right" href="#!">More Links</a>
+      </div>
+    </div>
+  </footer>
 </body>
+
+
+
+
+<script src="https://cdnjs.cloudflare.com/ajax/libs/materialize/1.0.0/js/materialize.min.js"></script>
+<script src="https://code.jquery.com/jquery-3.5.1.js" integrity="sha256-QWo7LDvxbWT2tbbQ97B53yJnYU3WhH/C8ycbRAkjPDc="
+  crossorigin="anonymous"></script>
+<script src="assets/scripts/mootools.js"></script>
+<script src="assets/scripts/search.js"></script>
+</body>
+
 
 </html>

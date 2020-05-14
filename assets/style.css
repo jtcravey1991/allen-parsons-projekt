@@ -1,4 +1,6 @@
-*, h1 {
+/* All pages ----------------------------------- */
+* {
+    box-sizing: border-box;
     margin: 0;
     padding: 0;
 }
@@ -15,12 +17,63 @@
     padding-bottom: 45px;
 }
 
+
 .greetings {
     text-align: center;
-    background-color: rgb(207, 108, 99);
+    background-color: rgb(78, 78, 78);
+    color: white;
 }
 
 .secondary-text {
     font-size: 30px;
 }
 
+
+/* Home / index.html --------------------------- */
+#rodImg {
+    width: 100%;
+}
+
+.greetings {
+    text-align: center;
+    background-color: rgb(207, 108, 99);
+}
+
+#row-1 {
+    background-color: lightyellow;
+}
+
+#row-2 {
+    background-color: lightyellow;
+}
+
+#recipeDay {
+    background-color: lightpink;
+}
+
+#aboutUs {
+    background-color: lightyellow;
+}
+
+.switch {
+    align-self: flex-end;
+    margin: 0.9375rem;
+}
+.inner-switch {
+    display: inline-block;
+    cursor: pointer;
+    border: 1px solid #555;
+    border-radius: 1.25rem;
+    width: 3.125rem;
+    text-align: center;
+    font-size: 1rem;
+    padding: 0.1875rem;
+    margin-left: 0.3125rem;
+}
+
+.dark,
+.dark * {
+    background-color: #222;
+    color: #e6e6e6;
+    border-color: #e6e6e6;
+}
