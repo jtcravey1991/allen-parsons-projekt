@@ -5,6 +5,24 @@ var lastLoad = "";
 var currentDay = moment().format("MMDDYY");
 var currentRecipe = {};
 
+if (localStorage.getItem("switch") == "light" ){
+    if (jQuery("body").hasClass("dark")) {
+        jQuery("body").removeClass("dark");
+        jQuery(".inner-switch").text("OFF");
+    }
+}
+else if (localStorage.getItem("switch") == "dark"){
+    jQuery("body").addClass("dark");
+    jQuery(".inner-switch").text("ON");
+}
+
+else {
+    if (jQuery("body").hasClass("dark")) {
+        jQuery("body").removeClass("dark");
+        jQuery(".inner-switch").text("OFF");
+    }
+}
+
 initialize();
 
 // initializes recipe of the day by checking if today was the last load, and rendering either a new random recipe or the one saved to local storage
@@ -127,6 +145,7 @@ function renderRecipe() {
     }
 }
 
+<<<<<<< HEAD
 
 
 function loadJoke(){
@@ -142,3 +161,62 @@ loadJoke()
 function randomJoke(joke){
 
 };
+=======
+//Dark Mode
+jQuery(".inner-switch").on("click", function () {
+    if (jQuery("body").hasClass("dark")) {
+        jQuery("body").removeClass("dark");
+        jQuery(".inner-switch").text("OFF");
+        localStorage.setItem("switch", "light")
+
+    } else {
+        jQuery("body").addClass("dark");
+        jQuery(".inner-switch").text("ON");
+        localStorage.setItem("switch", "dark")
+
+    }
+});
+
+
+/*
+var setTheme = function (theme) {
+    if (theme === 'dark') {
+        // dark
+        $("body").removeClass("standard");
+        $("body").addClass("dark");
+        $(".inner-switch").text("ON");
+        setCookie('Theme', 'dark', 30);
+    } else {
+        $("body").removeClass("dark");
+        $("body").addClass("standard");
+        $(".inner-switch").text("OFF");
+        setCookie('Theme', 'standard', 30);
+    }
+};
+
+currentTheme = getCookie('Theme');
+setTheme(currentTheme);
+
+$(".inner-switch").on("click", function () {
+    if ($("body").hasClass("dark")) {
+        // standard
+        setTheme('standard');
+    } else {
+        // dark mode
+        setTheme('dark');
+    }
+});
+
+var v = document.cookie.match('(^|;) ?' + name + '=([^;]*)(;|$)');
+return v ? v[2] : null;
+
+
+function setCookie(name, value, days) {
+    var d = new Date;
+    d.setTime(d.getTime() + 24 * 60 * 60 * 1000 * days);
+    document.cookie = name + "=" + value + ";path=/;expires=" + d.toGMTString();
+}
+
+function deleteCookie(name) { setCookie(name, '', -1); }
+*/
+>>>>>>> dd106d6ce056c2f0f4505a2bfddd37164b64906c
