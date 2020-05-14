@@ -45,18 +45,16 @@
 
 .recipe {
     height: max-content;
-    border-style: solid;
-    border-width: 1px;
-    border-color: black;
-    border-radius: 9px;
+    margin: 15px 0 30px 0;
+    align-items: center;
 }
 
-.recipeTitle img {
-    max-height: 100px;
-    max-width: 150px;
+.recipeImg {
+    height: 150px;
+    width: 150px;
     height: auto;
     width: auto;
-    margin: 0;
+    margin-left: 0;
     padding: 0 0 0 0;
 }
 
@@ -71,6 +69,17 @@
 }
 
 .flexTitle {
-    /* display: flex;
-    justify-content: center; */
+    display: flex;
+    justify-content: left;
+    align-items: center;
+}
+
+.flexTitle button {
+    max-width: 50%;
+    margin: 0 auto;
+    padding: 2px 15px;
+}
+
+.row {
+    margin-bottom: 0;
 }
