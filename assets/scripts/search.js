@@ -11,21 +11,20 @@ var allergies = {
     shellfish: false,
     soy: false
 };
-
 var savedRecipes = [];
-
 var currentResults = {};
-
 var mode;
+var ingredientElement = document.getElementById("currentIngredientsList");
+var allergyChecks = document.getElementById("allergiesForm");
 
 //Dark Mode
-if (localStorage.getItem("switch") == "light" ){
+if (localStorage.getItem("switch") == "light") {
     if (jQuery("body").hasClass("dark")) {
         jQuery("body").removeClass("dark");
         jQuery(".inner-switch").text("OFF");
     }
 }
-else if (localStorage.getItem("switch") == "dark"){
+else if (localStorage.getItem("switch") == "dark") {
     jQuery("body").addClass("dark");
     jQuery(".inner-switch").text("ON");
 }
@@ -47,10 +46,7 @@ jQuery(".inner-switch").on("click", function () {
         jQuery(".inner-switch").text("ON");
     }
 });
-function generateURL() {
 
-var ingredientElement = document.getElementById("currentIngredientsList");
-var allergyChecks = document.getElementById("allergiesForm");
 
 initialize();
 
