@@ -126,3 +126,19 @@ function renderRecipe() {
         j$("#rodIngredientSpan").text(j$("#rodIngredientSpan").text() + ", " + currentRecipe.meals[0].strIngredient20);
     }
 }
+
+
+
+function loadJoke(){
+    j$.ajax({
+        url:'https://api.spoonacular.com/food/jokes/random?apiKey=4483dfcaf2b64ab798b9683fabb17a1a',
+        method: "GET",
+      }).then(function (joke) {
+        console.log(jock);
+
+})};
+loadJoke()
+
+function randomJoke(joke){
+
+};
