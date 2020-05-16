@@ -184,3 +184,23 @@ function setCookie(name, value, days) {
 
 function deleteCookie(name) { setCookie(name, '', -1); }
 */
+// added joke to index page
+jQuery.ajax({
+    url:"https://api.spoonacular.com/food/jokes/random?apiKey=4a7db4af979d4a20b86b5cb38243e480",
+    
+    method: "GET",
+  }).then(function (response) {
+   
+
+    var funnyJoke= joke(response)
+
+    jQuery(".joke").html(funnyJoke);
+
+
+function joke(response) {
+    return (
+      "<p>" +
+      response.text +
+      "<p>" 
+  )}});
+
