@@ -21,6 +21,11 @@ body {
     background-color: #26a69a;
 }
 
+.greetings {
+    text-align: center;
+    background-color: rgb(78, 78, 78);
+    color: white;
+
 #rodTitle {
     font-size: 30px;
 }

@@ -147,7 +147,6 @@ jQuery(".inner-switch").on("click", function () {
     }
 });
 
-
 /*
 var setTheme = function (theme) {
     if (theme === 'dark') {
@@ -208,4 +207,3 @@ function joke(response) {
       response.text +
       "<p>" 
   )}});
-
