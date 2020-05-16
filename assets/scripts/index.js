@@ -5,24 +5,6 @@ var lastLoad = "";
 var currentDay = moment().format("MMDDYY");
 var currentRecipe = {};
 
-if (localStorage.getItem("switch") == "light" ){
-    if (jQuery("body").hasClass("dark")) {
-        jQuery("body").removeClass("dark");
-        jQuery(".inner-switch").text("OFF");
-    }
-}
-else if (localStorage.getItem("switch") == "dark"){
-    jQuery("body").addClass("dark");
-    jQuery(".inner-switch").text("ON");
-}
-
-else {
-    if (jQuery("body").hasClass("dark")) {
-        jQuery("body").removeClass("dark");
-        jQuery(".inner-switch").text("OFF");
-    }
-}
-
 initialize();
 
 // initializes recipe of the day by checking if today was the last load, and rendering either a new random recipe or the one saved to local storage
