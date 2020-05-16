@@ -4,6 +4,11 @@ var savedRecipeDisplay = document.getElementById("savedRecipeDisplay");
 
 initialize();
 
+// initializes nav bar
+jQuery(document).ready(function(){
+    jQuery('.sidenav').sidenav();
+  });
+
 // initializes the page
 function initialize() {
     loadRecipes();
@@ -36,12 +41,12 @@ function loadRecipes() {
 
 // renders saved recipes to the page
 function renderRecipes() {
-    document.id("savedRecipeDisplay").empty()
+    document.id("savedRecipeDisplay").empty();
     if (savedRecipes.length !== 0) {
         document.id("noRecipes").empty();
     }
     if (savedRecipes.length === 0) {
-        document.id("noRecipes").firstElementChild.textContent = ("You have no saved recipes.")
+        document.id("noRecipes").firstElementChild.textContent = ("You have no saved recipes.");
     }
     for (var i = 0; i < savedRecipes.length; i++) {
         var recipeDiv = new Element("div.row");

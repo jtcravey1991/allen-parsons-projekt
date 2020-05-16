@@ -21,6 +21,11 @@ var recipeResults = document.getElementById("searchResults");
 
 initialize();
 
+// initializes nav bar
+jQuery(document).ready(function(){
+    jQuery('.sidenav').sidenav();
+  });
+
 // initializes page with saved ingredients and allergies
 function initialize() {
     loadIngredientList();
@@ -196,7 +201,7 @@ function loadRecipes() {
 }
 
 // updates allergy check boxes to allergy object
-function renderAllergies() {
+function renderAllergies() { 
     var $ = document.id;
 
     $("dairyBox").checked = allergies.dairy;

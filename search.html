@@ -5,8 +5,8 @@
   <meta charset="UTF-8">
   <meta name="viewport" content="width=device-width, initial-scale=1.0">
   <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/materialize/1.0.0/css/materialize.min.css">
+  <link href="https://fonts.googleapis.com/icon?family=Material+Icons" rel="stylesheet">
   <link rel="stylesheet" href="assets/style.css">
-
   <title>Document</title>
 </head>
 
@@ -20,13 +20,21 @@
     </div>
     <nav>
       <div class="nav-wrapper">
-        <a href="#" class="brand-logo right">Logo</a>
-        <ul id="nav-mobile" class="left hide-on-med-and-down">
-          <li><a href="index.html">Home</a></li>
-          <li><a href="recipes.html">Saved Recipes</a></li>
-          <li><a href="search.html">Recipe Search</a></li>
-        </ul>
+          <a href="#!" class="brand-logo right">Logo</a>
+          <a href="#" data-target="mobile-demo" class="sidenav-trigger"><i class="material-icons">menu</i></a>
+          <ul class="left hide-on-med-and-down">
+              <li><a href="index.html">Home</a></li>
+              <li><a href="recipes.html">Saved Recipes</a></li>
+              <li><a href="search.html">Recipe Search</a></li>
+          </ul>
       </div>
+  </nav>
+
+  <ul class="sidenav" id="mobile-demo">
+      <li><a href="index.html">Home</a></li>
+      <li><a href="recipes.html">Saved Recipes</a></li>
+      <li><a href="search.html">Recipe Search</a></li>
+  </ul>
     </nav>
   </header>
 
@@ -167,11 +175,11 @@
 
 
 
-<script src="https://cdnjs.cloudflare.com/ajax/libs/materialize/1.0.0/js/materialize.min.js"></script>
 <script src="https://code.jquery.com/jquery-3.5.1.js" integrity="sha256-QWo7LDvxbWT2tbbQ97B53yJnYU3WhH/C8ycbRAkjPDc="
   crossorigin="anonymous"></script>
+<script src="https://cdnjs.cloudflare.com/ajax/libs/moment.js/2.24.0/moment.min.js"></script>
 <script src="assets/scripts/mootools.js"></script>
-<script src="assets/scripts/search.js"></script>
+<script src="https://cdnjs.cloudflare.com/ajax/libs/materialize/1.0.0/js/materialize.min.js"></script>
+<script src="assets/scripts/index.js"></script>
 </body>
-
 </html>

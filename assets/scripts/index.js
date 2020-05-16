@@ -7,6 +7,11 @@ var currentRecipe = {};
 
 initialize();
 
+// initializes nav bar
+jQuery(document).ready(function(){
+    jQuery('.sidenav').sidenav();
+  });
+
 // initializes recipe of the day by checking if today was the last load, and rendering either a new random recipe or the one saved to local storage
 function initialize() {
     loadLastLoad();
