@@ -1,5 +1,6 @@
 jQuery.noConflict();
 
+// global variables
 var ingredientList = [];
 var allergies = {
     dairy: false,
@@ -11,34 +12,25 @@ var allergies = {
     shellfish: false,
     soy: false
 };
-//Dark Mode
-if (localStorage.getItem("switch") == "light" ){
-    if (jQuery("body").hasClass("dark")) {
-        jQuery("body").removeClass("dark");
-        jQuery(".inner-switch").text("OFF");
-    }
-}
-else if (localStorage.getItem("switch") == "dark"){
-    jQuery("body").addClass("dark");
-    jQuery(".inner-switch").text("ON");
-}
-
-else {
-    if (jQuery("body").hasClass("dark")) {
-        jQuery("body").removeClass("dark");
-        jQuery(".inner-switch").text("OFF");
-    }
-}
-
+var savedRecipes = [];
+var currentResults = {};
+var mode;
 var ingredientElement = document.getElementById("currentIngredientsList");
 var allergyChecks = document.getElementById("allergiesForm");
+var recipeResults = document.getElementById("searchResults");
 
 initialize();
+
+// initializes nav bar
+jQuery(document).ready(function(){
+    jQuery('.sidenav').sidenav();
+  });
 
 // initializes page with saved ingredients and allergies
 function initialize() {
     loadIngredientList();
     loadAllergies();
+    loadRecipes();
     renderIngredients();
     renderAllergies();
 }
@@ -67,7 +59,54 @@ allergyChecks.addEventListener("click", function (event) {
     if (event.target.type === "checkbox") {
         updateAllergies();
         saveAllergies();
-        generateURL();
+    }
+});
+
+// adds event listener for recipe search button
+(function ($) {
+    $("recipeSearchButton").addEvent("click", function (event) {
+        event.preventDefault();
+        var queryURL = generateRecipeSearchURL($("recipeSearchInput").value);
+
+        jQuery.ajax({
+            url: queryURL,
+            method: "GET"
+        }).then(function (response) {
+            mode = "recipe";
+            currentResults = response;
+            renderSearchResults(response);
+        })
+    });
+})(document.id);
+
+// adds event listener for ingredient search button
+(function ($) {
+    $("ingredientSearchButton").addEvent("click", function (event) {
+        event.preventDefault();
+        var queryURL = generateIngredientURL();
+
+        jQuery.ajax({
+            url: queryURL,
+            method: "GET"
+        }).then(function (response) {
+            mode = "ingredient"
+            currentResults = response;
+            renderSearchResults(response);
+        })
+    });
+})(document.id);
+
+// adds listener to recipe save buttons
+recipeResults.addEventListener("click", function (event) {
+    if (event.target.type === "button") {
+        event.preventDefault();
+        var newSavedRecipe = {
+            title: event.target.parentElement.firstElementChild.firstElementChild.textContent,
+            source: event.target.parentElement.firstElementChild.getAttribute("href"),
+            img: event.target.parentElement.parentElement.firstElementChild.getAttribute("src")
+        }
+        savedRecipes.push(newSavedRecipe);
+        saveRecipes();
     }
 });
 
@@ -77,8 +116,7 @@ function checkIngredient(term) {
     jQuery.ajax({
         url: "https://api.spoonacular.com/food/ingredients/autocomplete?apiKey=4483dfcaf2b64ab798b9683fabb17a1a&query=" + checkedIngredient + "&number=1",
         method: "GET"
-    }).then( function (response) {
-        console.log(response);
+    }).then(function (response) {
         if (response.length === 0) {
             wrongIngredient();
         }
@@ -111,8 +149,9 @@ function renderIngredients() {
     for (var i = 0; i < ingredientList.length; i++) {
         var li = new Element("li");
         li.textContent = ingredientList[i];
-        
-        var deleteButton = new Element("button");
+
+        var deleteButton = new Element("button.saveButton");
+        deleteButton.addClass("btn deleteButton")
         deleteButton.textContent = "delete";
         deleteButton.id = i;
         deleteButton.set("type", "button");
@@ -148,8 +187,21 @@ function loadAllergies() {
     }
 }
 
+// saves recipes array
+function saveRecipes() {
+    localStorage.setItem("savedRecipes", JSON.stringify(savedRecipes));
+}
+
+// loads saved recipes from local storage
+function loadRecipes() {
+    var tempRecipes = JSON.parse(localStorage.getItem("savedRecipes"));
+    if (tempRecipes !== null) {
+        savedRecipes = tempRecipes;
+    }
+}
+
 // updates allergy check boxes to allergy object
-function renderAllergies() {
+function renderAllergies() { 
     var $ = document.id;
 
     $("dairyBox").checked = allergies.dairy;
@@ -176,23 +228,156 @@ function updateAllergies() {
     allergies.soy = $("soyBox").checked;
 }
 
-//Dark Mode
-jQuery(".inner-switch").on("click", function () {
-    if (jQuery("body").hasClass("dark")) {
-        jQuery("body").removeClass("dark");
-        jQuery(".inner-switch").text("OFF");
-    } else {
-        jQuery("body").addClass("dark");
-        jQuery(".inner-switch").text("ON");
-    }
-});
-function generateURL() {
+// generates the URL for ingredient search
+function generateIngredientURL() {
     var searchURL = "https://api.spoonacular.com/recipes/findByIngredients?apiKey=4483dfcaf2b64ab798b9683fabb17a1a&ingredients="
     for (var i = 0; i < ingredientList.length; i++) {
         searchURL += (ingredientList[i] + ",+")
     }
     searchURL = searchURL.slice(0, -2);
     searchURL += "&number=10"
-    
+    return searchURL;
 }
 
+// generates the URL for recipe search
+function generateRecipeSearchURL(searchTerm) {
+    var searchURL = "https://api.spoonacular.com/recipes/search?apiKey=4483dfcaf2b64ab798b9683fabb17a1a&query=" + searchTerm
+    var hasAllergies = false;
+
+    Object.keys(allergies).forEach(function (key) {
+        if (allergies[key] === true) {
+            hasAllergies = true;
+        }
+    });
+
+    if (hasAllergies === true) {
+        searchURL += "&intolerances="
+        if (allergies.dairy === true) {
+            searchURL += "dairy,+"
+        }
+        if (allergies.eggs === true) {
+            searchURL += "egg,+"
+        }
+        if (allergies.gluten === true) {
+            searchURL += "gluten,+"
+        }
+        if (allergies.peanut === true) {
+            searchURL += "peanut,+"
+        }
+        if (allergies.treeNut === true) {
+            searchURL += "tree+nut,+"
+        }
+        if (allergies.seafood === true) {
+            searchURL += "seafood,+"
+        }
+        if (allergies.shellfish === true) {
+            searchURL += "shellfish,+"
+        }
+        if (allergies.soy === true) {
+            searchURL += "soy,+"
+        }
+        searchURL = searchURL.slice(0, -2);
+    }
+
+    return searchURL;
+}
+
+// renders the search results to the page
+function renderSearchResults(recipes) {
+    document.id("searchResults").empty();
+    console.log(recipes);
+
+    if (mode === "recipe") {
+        for (var i = 0; i < recipes.results.length; i++) {
+
+            var recipeDiv = new Element("div");
+            recipeDiv.set("recipeId")
+            recipeDiv.addClass("row recipe")
+
+            var recipeImg = new Element("img");
+            recipeImg.addClass("col s12 m4 l3");
+            recipeImg.set("src", (recipes.baseUri + recipes.results[i].image));
+            recipeImg.set("alt", recipes.results[i].title);
+            recipeDiv.grab(recipeImg);
+            console.log(recipeDiv);
+
+            var recipeTitleDiv = new Element("div");
+            recipeTitleDiv.addClass("col s12 m6")
+            var recipeTitleA = new Element("a");
+            recipeTitleA.set("href", recipes.results[i].sourceUrl);
+            var recipeTitleH = new Element("h5");
+            recipeTitleH.textContent = recipes.results[i].title;
+            recipeTitleA.grab(recipeTitleH);
+            recipeTitleDiv.grab(recipeTitleA);
+
+            var saveButton = new Element("button.saveButton");
+            saveButton.addClass("btn");
+            saveButton.set("type", "button");
+            saveButton.set("index", i);
+            saveButton.textContent = "save";
+            recipeTitleDiv.grab(saveButton);
+
+            var readyIn = new Element("p");
+            readyIn.textContent = ("Ready In: " + recipes.results[i].readyInMinutes + " minutes");
+            recipeTitleDiv.grab(readyIn);
+
+            var serves = new Element("p");
+            serves.textContent = ("Serves " + recipes.results[i].servings);
+            recipeTitleDiv.grab(serves);
+
+            recipeDiv.grab(recipeTitleDiv);
+
+            document.id("searchResults").grab(recipeDiv);
+        }
+    }
+
+    if (mode === "ingredient") {
+        for (var i = 0; i < recipes.length; i++) {
+            var queryURL = "https://api.spoonacular.com/recipes/" + recipes[i].id + "/information?apiKey=4483dfcaf2b64ab798b9683fabb17a1a";
+            var recipe;
+            jQuery.ajax({
+                url: queryURL,
+                method: "GET",
+            }).then(function (response) {
+                console.log(response);
+                var recipeDiv = new Element("div");
+                recipeDiv.set("recipeId")
+                recipeDiv.addClass("row recipe")
+
+                var recipeImg = new Element("img");
+                recipeImg.addClass("col s12 m4 l3");
+                recipeImg.set("src", (response.image));
+                recipeImg.set("alt", response.title);
+                recipeDiv.grab(recipeImg);
+                console.log(recipeDiv);
+
+                var recipeTitleDiv = new Element("div");
+                recipeTitleDiv.addClass("col s12 m6")
+                var recipeTitleA = new Element("a");
+                recipeTitleA.set("href", response.sourceUrl);
+                var recipeTitleH = new Element("h5");
+                recipeTitleH.textContent = response.title;
+                recipeTitleA.grab(recipeTitleH);
+                recipeTitleDiv.grab(recipeTitleA);
+
+                var saveButton = new Element("button.saveButton");
+                saveButton.set("type", "button");
+                saveButton.set("index", i);
+                saveButton.textContent = "save";
+                recipeTitleDiv.grab(saveButton);
+
+                var readyIn = new Element("p");
+                readyIn.textContent = ("Ready In: " + response.readyInMinutes + " minutes");
+                recipeTitleDiv.grab(readyIn);
+
+                var serves = new Element("p");
+                serves.textContent = ("Serves " + response.servings);
+                recipeTitleDiv.grab(serves);
+
+                recipeDiv.grab(recipeTitleDiv);
+
+                document.id("searchResults").grab(recipeDiv);
+            });
+        }
+    }
+}

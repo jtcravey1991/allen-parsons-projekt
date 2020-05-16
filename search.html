@@ -5,9 +5,11 @@
   <meta charset="UTF-8">
   <meta name="viewport" content="width=device-width, initial-scale=1.0">
   <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/materialize/1.0.0/css/materialize.min.css">
+  <link href="https://fonts.googleapis.com/icon?family=Material+Icons" rel="stylesheet">
   <link rel="stylesheet" href="assets/style.css">
 
   <title>What's for dinner</title>
+
 </head>
 
 
@@ -15,25 +17,32 @@
   <!-- Header ---------------------------------------------------------------------------------------------------------------------- -->
   <header>
     <div class="jumbotron">
-        <h1>What's for dinner?!</h1>
+
+      <h1>What's for dinner?!</h1>
         <p>Taking the what's for dinner out of dinner</p>
-        <div class="switch right">Dark mode:<span class="inner-switch">OFF</span></div>
     </div>
     <nav>
-        <div class="nav-wrapper">
-          <i class="fas fa-stroopwafel right"></i> 
-          <ul id="nav-mobile" class="left hide-on-med-and-down">
-                <li><a href="index.html">Home</a></li>
-                <li><a href="recipes.html">Recipes</a></li>
-                <li><a href="search.html">Alergies</a></li>
-            </ul>
+      <div class="nav-wrapper">
+          <a href="#!" class="brand-logo right">Logo</a>
+          <a href="#" data-target="mobile-demo" class="sidenav-trigger"><i class="material-icons">menu</i></a>
+          <ul class="left hide-on-med-and-down">
+              <li><a href="index.html">Home</a></li>
+              <li><a href="recipes.html">Saved Recipes</a></li>
+              <li><a href="search.html">Recipe Search</a></li>
+          </ul>
+      </div>
+  </nav>
 
-        </div>
+  <ul class="sidenav" id="mobile-demo">
+      <li><a href="index.html">Home</a></li>
+      <li><a href="recipes.html">Saved Recipes</a></li>
+      <li><a href="search.html">Recipe Search</a></li>
+  </ul>
     </nav>
-</header>
+  </header>
 
   <!-- Body ------------------------------------------------------------------------------------------------------------------------ -->
-  <div class="container">
+  <div class="container content">
     <div class="row rowFlex">
 
       <div class="col s12 m5">
@@ -124,7 +133,7 @@
           <h5>Added Ingredients:</h5>
           <ul id="currentIngredientsList"></ul>
         </div>
-        <button id="recipeSearchButton" type="submit" class="btn">Search Recipes</button>
+        <button id="ingredientSearchButton" type="submit" class="btn">Search Recipes</button>
       </div>
 
 
@@ -133,28 +142,8 @@
     <div>
       <h5>Recipe Results:</h5>
     </div>
-
-
-    <div class="row rowFlex recipe">
-      <div class="col s12 m12 l4 recipeTitle">
-        <img src="https://via.placeholder.com/150" alt="placeholder">
-        <div class="flexTitle">
-          <h5>Recipe Title</h5>
-          <button type="button">Save</button>
-        </div>
-      </div>
-      <div class="col s12 m6 l4">
-        <h6>Owned Ingredients</h6>
-        <p>Lorem ipsum dolor sit amet, consectetur adipisicing elit. Consequatur porro nulla illo dolor dolorem
-          temporibus</p>
-      </div>
-      <div class="col s12 m6 l4">
-        <h6>Need to Purchase Ingredients</h6>
-        <p>Lorem ipsum dolor sit amet, consectetur adipisicing elit. Consequatur porro nulla illo dolor dolorem
-          temporibus</p>
-      </div>
+    <div id="searchResults">
     </div>
-  </div>
   </div>
 
   <!-- Footer ---------------------------------------------------------------------------------------------------------------------- -->
@@ -188,13 +177,11 @@
 
 
 
-<script src="https://kit.fontawesome.com/da8a2e45c0.js" crossorigin="anonymous"></script>
-<script src="https://cdnjs.cloudflare.com/ajax/libs/materialize/1.0.0/js/materialize.min.js"></script>
 <script src="https://code.jquery.com/jquery-3.5.1.js" integrity="sha256-QWo7LDvxbWT2tbbQ97B53yJnYU3WhH/C8ycbRAkjPDc="
   crossorigin="anonymous"></script>
+<script src="https://cdnjs.cloudflare.com/ajax/libs/moment.js/2.24.0/moment.min.js"></script>
 <script src="assets/scripts/mootools.js"></script>
-<script src="assets/scripts/search.js"></script>
+<script src="https://cdnjs.cloudflare.com/ajax/libs/materialize/1.0.0/js/materialize.min.js"></script>
+<script src="assets/scripts/index.js"></script>
 </body>
-
-
 </html>
