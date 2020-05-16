@@ -1,5 +1,6 @@
 jQuery.noConflict();
 
+// global variables
 var ingredientList = [];
 var allergies = {
     dairy: false,
@@ -12,13 +13,11 @@ var allergies = {
     soy: false
 };
 var savedRecipes = [];
-
 var currentResults = {};
-
 var mode;
-
 var ingredientElement = document.getElementById("currentIngredientsList");
 var allergyChecks = document.getElementById("allergiesForm");
+var recipeResults = document.getElementById("searchResults");
 
 initialize();
 
@@ -26,6 +25,7 @@ initialize();
 function initialize() {
     loadIngredientList();
     loadAllergies();
+    loadRecipes();
     renderIngredients();
     renderAllergies();
 }
@@ -74,6 +74,7 @@ allergyChecks.addEventListener("click", function (event) {
     });
 })(document.id);
 
+// adds event listener for ingredient search button
 (function ($) {
     $("ingredientSearchButton").addEvent("click", function (event) {
         event.preventDefault();
@@ -89,6 +90,20 @@ allergyChecks.addEventListener("click", function (event) {
         })
     });
 })(document.id);
+
+// adds listener to recipe save buttons
+recipeResults.addEventListener("click", function (event) {
+    if (event.target.type === "button") {
+        event.preventDefault();
+        var newSavedRecipe = {
+            title: event.target.parentElement.firstElementChild.firstElementChild.textContent,
+            source: event.target.parentElement.firstElementChild.getAttribute("href"),
+            img: event.target.parentElement.parentElement.firstElementChild.getAttribute("src")
+        }
+        savedRecipes.push(newSavedRecipe);
+        saveRecipes();
+    }
+});
 
 // submits an ajax to check if added ingredient is supported
 function checkIngredient(term) {
@@ -130,7 +145,8 @@ function renderIngredients() {
         var li = new Element("li");
         li.textContent = ingredientList[i];
 
-        var deleteButton = new Element("button");
+        var deleteButton = new Element("button.saveButton");
+        deleteButton.addClass("btn deleteButton")
         deleteButton.textContent = "delete";
         deleteButton.id = i;
         deleteButton.set("type", "button");
@@ -207,6 +223,7 @@ function updateAllergies() {
     allergies.soy = $("soyBox").checked;
 }
 
+// generates the URL for ingredient search
 function generateIngredientURL() {
     var searchURL = "https://api.spoonacular.com/recipes/findByIngredients?apiKey=4483dfcaf2b64ab798b9683fabb17a1a&ingredients="
     for (var i = 0; i < ingredientList.length; i++) {
@@ -217,6 +234,7 @@ function generateIngredientURL() {
     return searchURL;
 }
 
+// generates the URL for recipe search
 function generateRecipeSearchURL(searchTerm) {
     var searchURL = "https://api.spoonacular.com/recipes/search?apiKey=4483dfcaf2b64ab798b9683fabb17a1a&query=" + searchTerm
     var hasAllergies = false;
@@ -259,6 +277,7 @@ function generateRecipeSearchURL(searchTerm) {
     return searchURL;
 }
 
+// renders the search results to the page
 function renderSearchResults(recipes) {
     document.id("searchResults").empty();
     console.log(recipes);
@@ -287,6 +306,7 @@ function renderSearchResults(recipes) {
             recipeTitleDiv.grab(recipeTitleA);
 
             var saveButton = new Element("button.saveButton");
+            saveButton.addClass("btn");
             saveButton.set("type", "button");
             saveButton.set("index", i);
             saveButton.textContent = "save";
