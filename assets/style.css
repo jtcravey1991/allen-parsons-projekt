@@ -5,27 +5,37 @@
     padding: 0;
 }
 
-.content {
-    height: 300px;
+body {
+    background: rgb(231, 231, 231);
+}
+
+#row-1 {
+    background: #26a69a;;
 }
 
 .jumbotron {
     text-align: center;
-    background: rgb(78, 78, 78);
-    color: white;
     padding-top: 20px;
     padding-bottom: 45px;
+    color: #fff;
+    background-color: #26a69a;
 }
 
-
-.greetings {
-    text-align: center;
-    background-color: rgb(78, 78, 78);
-    color: white;
+#rodTitle {
+    font-size: 30px;
 }
 
 .secondary-text {
     font-size: 30px;
+}
+
+.content {
+    background: rgb(250, 250, 238);
+    padding: 0 20px 30px 20px;
+}
+
+.content div h3 {
+    margin: 0;
 }
 
 
@@ -34,9 +44,66 @@
     width: 100%;
 }
 
-.greetings {
+#orFlex p {
     text-align: center;
-    background-color: rgb(207, 108, 99);
+    margin: 30px 0 10px 0;
+}
+
+.rowFlex {
+    display: flex;
+    align-items: center;
+    flex-wrap: wrap;
+}
+
+.recipe {
+    height: max-content;
+    margin: 15px 0 30px 0;
+    align-items: center;
+}
+
+.recipeImg {
+    height: 150px;
+    width: 150px;
+    height: auto;
+    width: auto;
+    margin-left: 0;
+    padding: 0 0 0 0;
+}
+
+.recipeTitle {
+    display: flex;
+    align-items: center;
+    justify-content: left;
+}
+
+.recipeTitle h5 {
+    margin: 0 20px;
+}
+
+.flexTitle {
+    display: flex;
+    justify-content: left;
+    align-items: center;
+}
+
+.flexTitle button {
+    max-width: 50%;
+    margin: 0 auto;
+    padding: 2px 15px;
+}
+
+.row {
+    margin-bottom: 0;
+}
+
+.greetings {
+    margin: 0;
+    text-align: center;
+    background-color: lightyellow;
+    border-bottom-style: solid;
+    border-bottom-width: 2px;
+    border-bottom-color: #26a69a;
+    
 }
 
 #row-1 {
@@ -47,18 +114,11 @@
     background-color: lightyellow;
 }
 
-#recipeDay {
-    background-color: lightpink;
-}
-
-#aboutUs {
-    background-color: lightyellow;
-}
-
 .switch {
     align-self: flex-end;
     margin: 0.9375rem;
 }
+
 .inner-switch {
     display: inline-block;
     cursor: pointer;
@@ -71,9 +131,23 @@
     margin-left: 0.3125rem;
 }
 
-.dark,
-.dark * {
-    background-color: #222;
-    color: #e6e6e6;
-    border-color: #e6e6e6;
+.saveButton {
+    text-decoration: none;
+    color: #fff;
+    background-color: #26a69a;
+    text-align: center;
+    letter-spacing: .5px;
+}
+
+.deleteButton {
+    font-size: 10px;
+    height: 25px;
+    line-height: 25px;
+    padding: 0 5px;
+    margin: 5px;
+}
+
+#currentIngredients {
+    min-height: 115px;
+    max-height: max-content;
 }
