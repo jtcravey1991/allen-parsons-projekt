@@ -151,7 +151,7 @@ function renderRecipe() {
 
 // added joke to index page
 jQuery.ajax({
-    url:"https://api.spoonacular.com/food/jokes/random?apiKey=4a7db4af979d4a20b86b5cb38243e480",
+    url:"https://api.spoonacular.com/food/jokes/random?apiKey=fe159fe9965f4cb28a5a0f45fd2ac4cb",
     
     method: "GET",
   }).then(function (response) {
