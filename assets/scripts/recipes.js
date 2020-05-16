@@ -13,6 +13,23 @@ jQuery(document).ready(function(){
 function initialize() {
     loadRecipes();
     renderRecipes();
+    if (localStorage.getItem("switch") == "light" ){
+        if (jQuery("body").hasClass("dark")) {
+            jQuery("body").removeClass("dark");
+            jQuery(".inner-switch").text("OFF");
+        }
+    }
+    else if (localStorage.getItem("switch") == "dark"){
+        jQuery("body").addClass("dark");
+        jQuery(".inner-switch").text("ON");
+    }
+    
+    else {
+        if (jQuery("body").hasClass("dark")) {
+            jQuery("body").removeClass("dark");
+            jQuery(".inner-switch").text("OFF");
+        }
+    }
 }
 
 // listener for deleting recipes
@@ -79,3 +96,17 @@ function renderRecipes() {
         document.id("savedRecipeDisplay").grab(recipeDiv);
     }
 }
+
+jQuery(".inner-switch").on("click", function () {
+    if (jQuery("body").hasClass("dark")) {
+        jQuery("body").removeClass("dark");
+        jQuery(".inner-switch").text("OFF");
+        localStorage.setItem("switch", "light")
+
+    } else {
+        jQuery("body").addClass("dark");
+        jQuery(".inner-switch").text("ON");
+        localStorage.setItem("switch", "dark")
+
+    }
+});

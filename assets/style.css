@@ -1,4 +1,5 @@
 /* All pages ----------------------------------- */
+
 * {
     box-sizing: border-box;
     margin: 0;
@@ -9,10 +10,6 @@ body {
     background: rgb(231, 231, 231);
 }
 
-#row-1 {
-    background: #26a69a;;
-}
-
 .jumbotron {
     text-align: center;
     padding-top: 20px;
@@ -20,11 +17,6 @@ body {
     color: #fff;
     background-color: #26a69a;
 }
-
-.greetings {
-    text-align: center;
-    background-color: rgb(78, 78, 78);
-    color: white;
 
 #rodTitle {
     font-size: 30px;
@@ -111,13 +103,13 @@ body {
     
 }
 
-#row-1 {
-    background-color: lightyellow;
+/* #row-1 {
+    background: lightyellow;
 }
 
 #row-2 {
-    background-color: lightyellow;
-}
+    background: lightyellow;
+} */
 
 .switch {
     align-self: flex-end;
@@ -155,4 +147,31 @@ body {
 #currentIngredients {
     min-height: 115px;
     max-height: max-content;
+}
+
+.switch {
+    align-self: flex-end;
+    margin: 0.9375rem;
+}
+.inner-switch {
+    display: inline-block;
+    cursor: pointer;
+    border: 1px solid #555;
+    border-radius: 1.25rem;
+    width: 3.125rem;
+    text-align: center;
+    font-size: 1rem;
+    padding: 0.1875rem;
+    margin-left: 0.3125rem;
+}
+
+#homeBody {
+    background: lightyellow;
+}
+
+.dark,
+.dark * {
+    background: #222;
+    color: #e6e6e6;
+    border-color: #e6e6e6;
 }

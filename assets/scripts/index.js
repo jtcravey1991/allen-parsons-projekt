@@ -22,6 +22,23 @@ function initialize() {
     else {
         loadRandomRecipe();
     }
+    if (localStorage.getItem("switch") == "light" ){
+        if (jQuery("body").hasClass("dark")) {
+            jQuery("body").removeClass("dark");
+            jQuery(".inner-switch").text("OFF");
+        }
+    }
+    else if (localStorage.getItem("switch") == "dark"){
+        jQuery("body").addClass("dark");
+        jQuery(".inner-switch").text("ON");
+    }
+    
+    else {
+        if (jQuery("body").hasClass("dark")) {
+            jQuery("body").removeClass("dark");
+            jQuery(".inner-switch").text("OFF");
+        }
+    }
 }
 
 // loads a random recipe, updates last load and saves info to local storage
@@ -132,62 +149,6 @@ function renderRecipe() {
     }
 }
 
-//Dark Mode
-jQuery(".inner-switch").on("click", function () {
-    if (jQuery("body").hasClass("dark")) {
-        jQuery("body").removeClass("dark");
-        jQuery(".inner-switch").text("OFF");
-        localStorage.setItem("switch", "light")
-
-    } else {
-        jQuery("body").addClass("dark");
-        jQuery(".inner-switch").text("ON");
-        localStorage.setItem("switch", "dark")
-
-    }
-});
-
-/*
-var setTheme = function (theme) {
-    if (theme === 'dark') {
-        // dark
-        $("body").removeClass("standard");
-        $("body").addClass("dark");
-        $(".inner-switch").text("ON");
-        setCookie('Theme', 'dark', 30);
-    } else {
-        $("body").removeClass("dark");
-        $("body").addClass("standard");
-        $(".inner-switch").text("OFF");
-        setCookie('Theme', 'standard', 30);
-    }
-};
-
-currentTheme = getCookie('Theme');
-setTheme(currentTheme);
-
-$(".inner-switch").on("click", function () {
-    if ($("body").hasClass("dark")) {
-        // standard
-        setTheme('standard');
-    } else {
-        // dark mode
-        setTheme('dark');
-    }
-});
-
-var v = document.cookie.match('(^|;) ?' + name + '=([^;]*)(;|$)');
-return v ? v[2] : null;
-
-
-function setCookie(name, value, days) {
-    var d = new Date;
-    d.setTime(d.getTime() + 24 * 60 * 60 * 1000 * days);
-    document.cookie = name + "=" + value + ";path=/;expires=" + d.toGMTString();
-}
-
-function deleteCookie(name) { setCookie(name, '', -1); }
-*/
 // added joke to index page
 jQuery.ajax({
     url:"https://api.spoonacular.com/food/jokes/random?apiKey=4a7db4af979d4a20b86b5cb38243e480",
@@ -207,3 +168,20 @@ function joke(response) {
       response.text +
       "<p>" 
   )}});
+
+
+  jQuery(".inner-switch").on("click", function () {
+    if (jQuery("body").hasClass("dark")) {
+        jQuery("body").removeClass("dark");
+        jQuery("#row-1").removeClass("dark");
+        jQuery(".inner-switch").text("OFF");
+        localStorage.setItem("switch", "light")
+
+    } else {
+        jQuery("body").addClass("dark");
+        jQuery("#row-1").addClass("dark");
+        jQuery(".inner-switch").text("ON");
+        localStorage.setItem("switch", "dark")
+
+    }
+});
