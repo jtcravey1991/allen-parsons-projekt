@@ -8,9 +8,9 @@ var currentRecipe = {};
 initialize();
 
 // initializes nav bar
-jQuery(document).ready(function(){
+jQuery(document).ready(function () {
     jQuery('.sidenav').sidenav();
-  });
+});
 
 // initializes recipe of the day by checking if today was the last load, and rendering either a new random recipe or the one saved to local storage
 function initialize() {
@@ -22,17 +22,17 @@ function initialize() {
     else {
         loadRandomRecipe();
     }
-    if (localStorage.getItem("switch") == "light" ){
+    if (localStorage.getItem("switch") == "light") {
         if (jQuery("body").hasClass("dark")) {
             jQuery("body").removeClass("dark");
             jQuery(".inner-switch").text("OFF");
         }
     }
-    else if (localStorage.getItem("switch") == "dark"){
+    else if (localStorage.getItem("switch") == "dark") {
         jQuery("body").addClass("dark");
         jQuery(".inner-switch").text("ON");
     }
-    
+
     else {
         if (jQuery("body").hasClass("dark")) {
             jQuery("body").removeClass("dark");
@@ -151,26 +151,28 @@ function renderRecipe() {
 
 // added joke to index page
 jQuery.ajax({
-    url:"https://api.spoonacular.com/food/jokes/random?apiKey=4a7db4af979d4a20b86b5cb38243e480",
-    
-    method: "GET",
-  }).then(function (response) {
-   
+    url: "https://api.spoonacular.com/food/jokes/random?apiKey=4a7db4af979d4a20b86b5cb38243e480",
 
-    var funnyJoke= joke(response)
+    method: "GET",
+}).then(function (response) {
+
+
+    var funnyJoke = joke(response)
 
     jQuery(".joke").html(funnyJoke);
 
 
-function joke(response) {
-    return (
-      "<p>" +
-      response.text +
-      "<p>" 
-  )}});
+    function joke(response) {
+        return (
+            "<p>" +
+            response.text +
+            "<p>"
+        )
+    }
+});
 
 
-  jQuery(".inner-switch").on("click", function () {
+jQuery(".inner-switch").on("click", function () {
     if (jQuery("body").hasClass("dark")) {
         jQuery("body").removeClass("dark");
         jQuery("#row-1").removeClass("dark");
