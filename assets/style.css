@@ -175,3 +175,18 @@ body {
     color: #e6e6e6;
     border-color: #e6e6e6;
 }
+
+#aboutUs p {
+    font-size: 20px;
+    line-height: 30pt;
+    margin-bottom: 15px;
+    text-indent: 50px;
+}
+
+h3 {
+    text-align: center;
+}
+
+.savedRecipe {
+    margin: 15px 0;
+}
