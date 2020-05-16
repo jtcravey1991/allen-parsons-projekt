@@ -131,7 +131,7 @@ recipeResults.addEventListener("click", function (event) {
 function checkIngredient(term) {
     var checkedIngredient = term.toLowerCase();
     jQuery.ajax({
-        url: "https://api.spoonacular.com/food/ingredients/autocomplete?apiKey=4483dfcaf2b64ab798b9683fabb17a1a&query=" + checkedIngredient + "&number=1",
+        url: "https://api.spoonacular.com/food/ingredients/autocomplete?apiKey=fe159fe9965f4cb28a5a0f45fd2ac4cb&query=" + checkedIngredient + "&number=1",
         method: "GET"
     }).then(function (response) {
         if (response.length === 0) {
@@ -247,7 +247,7 @@ function updateAllergies() {
 
 // generates the URL for ingredient search
 function generateIngredientURL() {
-    var searchURL = "https://api.spoonacular.com/recipes/findByIngredients?apiKey=4483dfcaf2b64ab798b9683fabb17a1a&ingredients="
+    var searchURL = "https://api.spoonacular.com/recipes/findByIngredients?apiKey=fe159fe9965f4cb28a5a0f45fd2ac4cb&ingredients="
     for (var i = 0; i < ingredientList.length; i++) {
         searchURL += (ingredientList[i] + ",+")
     }
@@ -258,7 +258,7 @@ function generateIngredientURL() {
 
 // generates the URL for recipe search
 function generateRecipeSearchURL(searchTerm) {
-    var searchURL = "https://api.spoonacular.com/recipes/search?apiKey=4483dfcaf2b64ab798b9683fabb17a1a&query=" + searchTerm
+    var searchURL = "https://api.spoonacular.com/recipes/search?apiKey=fe159fe9965f4cb28a5a0f45fd2ac4cb&query=" + searchTerm
     var hasAllergies = false;
 
     Object.keys(allergies).forEach(function (key) {
@@ -350,7 +350,7 @@ function renderSearchResults(recipes) {
 
     if (mode === "ingredient") {
         for (var i = 0; i < recipes.length; i++) {
-            var queryURL = "https://api.spoonacular.com/recipes/" + recipes[i].id + "/information?apiKey=4483dfcaf2b64ab798b9683fabb17a1a";
+            var queryURL = "https://api.spoonacular.com/recipes/" + recipes[i].id + "/information?apiKey=fe159fe9965f4cb28a5a0f45fd2ac4cb";
             var recipe;
             jQuery.ajax({
                 url: queryURL,
